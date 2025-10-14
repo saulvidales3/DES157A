@@ -1,0 +1,323 @@
+h1{
+    text-align: center; 
+    padding-top: 30px;
+    color: black;
+    font-family: "Nerko One", cursive;
+    font-weight: 400;
+    font-size: 50px;
+    font-style: normal;
+}
+
+h1 {
+    
+    animation-name: colorChange; /* Name of your keyframe animation */
+    animation-duration: 8s; /* Duration of one animation cycle */
+    animation-iteration-count: infinite; /* Make the animation repeat infinitely */
+    animation-direction: alternate;
+}
+
+@keyframes colorChange {
+    100% {
+        color: rgb(240, 50, 168);
+    }
+    80% {
+        color: rgb(163, 65, 195);
+    }
+  
+    10% {
+        color: orange;
+    }
+}
+
+
+h2{
+    text-align: center; 
+    color: rgb(4, 4, 4);
+    font-family: "Nerko One", cursive;
+    font-size: 15px;
+    font-style: normal;
+    margin-top: -15px;
+}
+
+ /* default: ul inside a block should stack vertically (we'll make blocks lay out horizontally) */
+ .links-container {
+     display: flex;
+     gap: 20px;
+     justify-content: center;
+     align-items: flex-start;
+     flex-wrap: wrap;
+ }
+
+ .block {
+     background: transparent; /* block container transparent, yellow is on the ul */
+     width: 240px; /* fixed block width so blocks align horizontally */
+     box-sizing: border-box;
+ }
+
+ .block h2.links {
+     margin: 0 0 8px 0;
+     text-align: center;
+     background-color: rgb(255, 169, 77);
+     padding: 10px 12px;
+     border-radius: 8px 8px 0 0;
+ }
+
+ .block ul {
+     display: flex;
+     flex-direction: column; /* vertical list inside the yellow block */
+     gap: 8px;
+     background-color: rgb(255, 213, 0);
+     margin: 0;
+     padding: 12px;
+     border-radius: 0 0 8px 8px;
+     list-style: none;
+ }
+
+
+
+
+.links {
+    display: block;
+    text-align: center;
+}
+
+li{
+    margin: 0;
+    padding: 6px 8px;
+}
+
+nav ul li a {
+    
+    list-style: none;
+    text-decoration: none;
+    color: blueviolet;
+    justify-content: center;
+    text-align: center;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    
+    
+}
+
+
+
+/* .home{
+    text-align: center;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-left: 12px;
+
+    text-decoration: none;
+    color: rgb(4, 4, 4);
+    font-family: "Nerko One", cursive;
+    font-size: 15px;
+    font-style: normal;
+    background-color: rgb(255, 213, 0); /* Yellow background */
+/* } */
+
+.table-content {
+    display:flex;
+    
+    justify-content: space-around;
+    
+}
+
+
+.table-content a:hover {
+  display: block;
+  background-color: blueviolet;
+  color: rgb(255, 213, 0);
+  
+}
+
+/* header{
+    position: relative;
+} */
+.sun{
+        background-color: rgb(255, 213, 0); /* Yellow background */
+        width: 300px; 
+        height: 300px; 
+        border-radius: 50%; 
+        display: flex;
+        align-items: top;
+        justify-content: top;
+        flex-direction: column;
+}
+
+/* make header fixed at top and center the sun */
+header{
+    width: 100%; 
+    top:10px;
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-start; 
+    /* position: fixed; */
+       
+        /* top: 0px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+        z-index: 50;
+        padding: 0px 0 0 0;  */
+}
+
+/* push main content down so it doesn't sit under the fixed header */
+main{
+        margin-top: 260px; /* approx header + sun height; adjust if needed */
+}
+
+@media (max-width: 600px) {
+    .sun{
+        width: 250px;
+        height: 250px;
+        margin: 0 auto;
+
+    }
+
+    main{
+        margin-top: 180px;
+        padding-top: 190px;
+    }
+    .table-content a:hover {
+    display: block;
+    background-color: blueviolet;
+    color: rgb(255, 213, 0);
+  
+}
+}
+
+
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+
+body {
+   background: linear-gradient(0deg,rgba(131, 58, 180, 1) 0%, rgba(253, 29, 193, 1) 37%, rgba(253, 113, 38, 1) 60%, rgba(252, 246, 69, 1) 81%);
+   display: flex;
+   justify-content: center; 
+   align-items: center; 
+   min-height: 100vh;
+   margin: 0;
+}
+ 
+
+@media (max-width: 600px) {
+
+    main{
+        margin-top: 320px;
+    }
+  body {
+    align-items: flex-start; /* Aligns content to the top on small screens */
+  }
+
+  header{
+    top: 30px;
+    
+  }
+
+.links {
+    
+    display: block;
+    width: 200px;
+    text-align: center;
+    background-color: rgb(255, 169, 77);
+    margin: auto;
+    padding: 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+} 
+
+.sun-container{
+   /*  position: absolute; */
+   margin: auto;
+}
+
+
+ ul {
+    display: block;
+    width: 200px;
+    text-align: center;
+    background-color: rgb(255, 213, 0);
+    margin: auto;
+    padding: 20px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+nav ul li a {
+    /* flex: 1;
+    display: block;
+    background-color: rgb(255, 213, 0);
+    padding: 20px;
+    border-radius: 8px; */
+    list-style: none;
+    text-decoration: none;
+    color: blueviolet;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    
+    
+
+}
+
+li{
+    margin: 20px;
+    padding: 10px;
+}
+
+  .sun-container {
+    align-items: flex-start; /* Aligns to the top in mobile view */
+    min-height: auto;
+    /* position: static;
+    padding-top: 20px; 
+    top: 0;
+    left: 50%;
+    transform: none;
+    justify-content: center;
+    align-items: flex-start;
+    height: auto;  */
+  }
+
+  h1{
+    font-size: 30px; /* Smaller font size for mobile */
+    /* position: relative; */
+  }
+
+  h2{
+    font-size: 12px;
+  }
+
+  .sun {
+    /* position: relative; */
+    width: 300px; 
+    height: 300px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+}
+
+
+
