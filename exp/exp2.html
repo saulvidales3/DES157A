@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXP 2</title>
+</head>
+<body>
+    <h1>experiment 2 </h1>
+    <!-- The function changes the background color of the webpage based on what primary color the user inputs  -->
+    <script>
+        var userInput = prompt("Enter your favorite primary color: blue, yellow, or red", ""); 
+        
+
+        function pickedColor() {
+            if (userInput === "blue") {
+                document.body.style.backgroundColor = "blue";
+                
+            }
+
+            if (userInput === "yellow") {
+                document.body.style.backgroundColor = "yellow";
+                
+            }
+
+            if (userInput === "red") {
+                document.body.style.backgroundColor = "red";
+                
+            }
+
+    
+        }
+
+       
+        pickedColor();
+    </script>
+    
+</body>
+</html>
