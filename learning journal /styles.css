@@ -5,17 +5,17 @@ body {
 
 
 .whitebox{
-    background-color: #fffcfc; 
-    opacity: 70%;
+    background-color: #fffcfce1; 
+
     border: 2px solid #ccc; 
     border-radius: 15px; 
-    padding: 20px; 
+    padding: 10px; 
     margin-top: 40px;
 
 
 }
 
-.whitebox h1{
+ h1{
     text-align: center; 
     color: black;
     opacity: 100%;
@@ -25,5 +25,41 @@ body {
     font-style: normal;
     
    
+}
+
+h2{
+  text-align: center; 
+    color: black;
+    opacity: 100%;
+    font-family: "Caveat Brush", cursive;
+    font-weight: 400;
+    font-size: 30px;
+    font-style: light;
+    
+    
+
+}
+
+p{
+  /* display: block; */
+  background-color: rgba(240, 248, 255, 0.804);
+  border-radius: 15px;
+  padding: px;
+
+
+}
+
+
+.cards {
+    background-color: rgba(240, 248, 255, 0.804);
+    border-radius: 15px;
+    padding: 10px;
+    display: grid;
+    row-gap: 40px;
+    margin: 40px;
+}
+
+.cards-content {
+    margin: 40px;
 }
 
