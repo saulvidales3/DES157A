@@ -1,5 +1,26 @@
 body {
-  background-image: url("images\ /pinkcomp.jpg");
+  background-image: url("images/deskback.jpg");
+    margin-right: 0;
+   
+    background-repeat: no-repeat;
+    background-position: center,center;
+    background-size: cover;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.journal{
+  background-image: url("images/pinkcomp.jpg");
+  border-radius: 20px;
+  width: 550px;
+  /* height: 100%; */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+  margin: auto;
+  padding: 20px;
+}
+
+p{
+
 }
 
 

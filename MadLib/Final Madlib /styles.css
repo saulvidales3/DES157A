@@ -1,10 +1,49 @@
-html {
-    background-image: url("images\ /madlibbackground.png");
+body {
+    /* background-image: url("images/cloudombre.png"); */
+    background-image: url(images/finalbackground.png);
+  
+    margin-right: 0;
+   
     background-repeat: no-repeat;
-    background-size: auto;
-    background-position: auto;
+    background-position: center,center;
+    background-size: cover;
+    height: 100vh;
+}
+h1{
+  font-family: "Rubik Bubbles", system-ui;
+  font-weight: 400;
+  font-size: 30px;
+  font-style: normal;
+  color: white;
+  
+  text-align: center;
+
+}
+
+h2{
+  font-family: "Caveat Brush", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  text-align: center;
+
+}
+
+form {
+  font-family: "Caveat Brush", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+
+    
+   
+   
+   
 
     
    
   
-}
