@@ -12,16 +12,29 @@ body {
 .journal{
   background-image: url("images/pinkcomp.jpg");
   border-radius: 20px;
-  width: 550px;
-  /* height: 100%; */
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+  width: 800px;
+  
   margin: auto;
   padding: 20px;
 }
 
 p{
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 
 }
+
+a, h3{
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: bold;
+  
+}
+
+
 
 
 
@@ -72,7 +85,7 @@ p{
 
 
 .cards {
-    background-color: rgba(240, 248, 255, 0.804);
+    background-color:rgba(240, 248, 255, 0.804);
     border-radius: 15px;
     padding: 10px;
     display: grid;
