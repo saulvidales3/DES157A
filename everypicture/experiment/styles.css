@@ -74,7 +74,7 @@ h2{
 
 .card1 > .card-front {
   transform: rotateY(0deg);
-  background: url('images/sunny.png') center/cover no-repeat;
+  background: url('images/sunny1.png') center/cover no-repeat;
 }
 
 .card1 > .card-back {
