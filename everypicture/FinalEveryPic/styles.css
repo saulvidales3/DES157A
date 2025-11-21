@@ -59,6 +59,7 @@ h2{
   cursor: pointer;
   transition: transform 0.4s ease;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+  
 
 }
 
@@ -124,6 +125,10 @@ h2{
   transition: transform 0.4s ease;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
 
+}
+
+.card1:hover, .card2:hover, .card3:hover, .card4:hover, .card5:hover{
+box-shadow: 0 0 30px 8px rgb(251, 253, 139);
 }
 
 
