@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle Game</title>
+
+    <!-- Normalize CSS for Browser Consistency -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <!-- My Styles -->
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>WHO WILL POP!</h1>
+    <section id="game">
+        <div>
+            <img src="images/playyer1.png" alt="player 1" width="600" height="600" id="player1">
+            <h2>Player's   1   Stability</h2>
+            <!-- The divs inside the healthbar0 and healthbar1 divs are set to position
+            absolute and have a width of 100%. As the game progresses their width is changed to 
+            represent the percentage of health they have left. They have 0 and 1 at the end so that
+            they can be easily targeted by JS based on the index value which is either 0 or 1 -->
+            <div class="stable">
+                <div id="healthbar0"><div></div></div><p id="monsterhealth0">100%</p>
+            </div>
+        </div>
+        <!-- Rays container for attack beams -->
+        <div id="rays"></div>
+        <div>
+            <img src="images/Pllayyer2.png" alt="player2" width="600" height="600" id="player2">
+            <h2>Player's    2    Stability</h2>
+            <div class="health">
+                <div id="healthbar1"><div></div></div><p id="monsterhealth1">100%</p>
+            </div>
+        </div>
+    </section>
+    <section id="action">
+        <div id="messages">
+            <p>Press the start button to randomly select the first monster to attack!</p>
+            <button id="start">Start Battle!</button>
+        </div>
+        <button id="attack" class="hidden">Attack!</button>
+    </section>
+    
+</body>
+</html>
