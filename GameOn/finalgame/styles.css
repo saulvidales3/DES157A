@@ -1,0 +1,303 @@
+body{
+    background-image: url("images/cloudombre.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center,center;
+    background-attachment: fixed;
+    
+    
+}
+h1{
+    font-family: "Rubik Bubbles", system-ui;
+    font-weight: 400;
+    font-size: 30px;
+    font-style: normal;
+    color: white;
+  
+    text-align: center;
+
+}
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-top: 0px;
+}
+
+
+
+
+
+h2 {
+  font-family: "Quicksand", sans-serif;
+    font-weight: 400;
+   
+    font-style: normal;
+    color: white;
+  
+    margin: 0;
+   font-size: 1.2em;
+}
+
+p{
+  font-family: "Quicksand", sans-serif;
+  font-size:20px;
+  font-style: normal;
+}
+
+#game {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 300px;
+    max-width: 1000px;
+    margin: 0 auto 0px auto;
+    position: relative;
+}
+
+/* Container for animated rays/beams */
+#rays {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+    height: 100%;
+}
+
+/* Individual ray beam element */
+.ray {
+    position: absolute;
+    height: 6px;
+    background: linear-gradient(0deg,rgba(121, 48, 255, 1) 0%, rgba(222, 51, 171, 1) 100%);
+    border-radius: 3px;
+    /* box-shadow: linear-gradient(0deg,rgba(121, 48, 255, 1) 0%, rgba(222, 51, 171, 1) 100%); */
+    filter: blur(0.5px);
+    transform-origin: left center;
+}
+
+/* Ray shooting from bottom-left to top-right (Player 1 attacking Player 2) */
+.ray-left-to-right {
+    left: 5%;
+    bottom: 10%;
+    animation: shoot-ray-diagonal-lr 0.6s ease-out forwards;
+}
+
+@keyframes shoot-ray-diagonal-lr {
+    0% {
+        width: 0;
+        opacity: 1;
+        transform: rotate(-25deg);
+    }
+    60% {
+        width: 90%;
+        opacity: 1;
+        transform: rotate(-25deg);
+    }
+    100% {
+        width: 90%;
+        opacity: 0;
+        transform: rotate(-25deg);
+    }
+}
+
+/* Ray shooting from bottom-right to top-left (Player 2 attacking Player 1) */
+.ray-right-to-left {
+    right: 5%;
+    bottom: 10%;
+    animation: shoot-ray-diagonal-rl 0.6s ease-out forwards;
+    transform-origin: right center;
+}
+
+@keyframes shoot-ray-diagonal-rl {
+    0% {
+        width: 0;
+        opacity: 1;
+        transform: rotate(25deg);
+    }
+    60% {
+        width: 90%;
+        opacity: 1;
+        transform: rotate(25deg);
+    }
+    100% {
+        width: 90%;
+        opacity: 0;
+        transform: rotate(25deg);
+    }
+}
+
+/* Multi-ray attack effects for stronger attacks */
+.ray.ray-1 { top: 45%; }
+.ray.ray-2 { top: 50%; }
+.ray.ray-3 { top: 55%; }
+.ray.ray-4 { top: 40%; }
+.ray.ray-5 { top: 60%; }
+
+.health {
+    /* display: flex; */
+    align-items: center;
+    gap: 15px;
+}
+
+#healthbar0, #healthbar1 {
+    width: 75%;
+    height: 30px;
+    border: 2px solid #333;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+#healthbar0 div, #healthbar1 div{
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background:linear-gradient(0deg,rgba(180, 250, 248, 1) 0%, rgba(255, 184, 232, 1) 100%);
+}
+
+#action {
+    max-width: 1000px;
+    text-align: center;
+    padding: 25px;
+    margin: auto;
+    border: 2px solid #333;
+    border-radius: 15px;
+    background-color: rgba(240, 248, 255, 0.71);
+    box-sizing: border-box;
+}
+
+#start {
+  font-family: "Quicksand", sans-serif;
+  font-size:15px;
+  font-style: normal;
+  border-radius: 20px;
+  background-color: rgb(181, 243, 251);
+  padding: 15px 25px;
+}
+
+#attack {
+  font-family: "Quicksand", sans-serif;
+  font-size:15px;
+  font-style: normal;
+  border-radius: 20px;
+  background-color: rgb(251, 181, 232);
+  padding: 15px 25px;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.showing {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* battle animations */
+
+/* ATTACKER ANIMATIONS: Player shoots toward opponent */
+/* Attack intensity increases with attack number (0-4) */
+.attack0 {
+  animation: shoot-weak 0.6s ease-out;
+}
+
+.attack1 {
+  animation: shoot-medium 0.6s ease-out;
+}
+
+.attack2 {
+  animation: shoot-strong 0.6s ease-out;
+}
+
+.attack3 {
+  animation: shoot-stronger 0.6s ease-out;
+}
+
+.attack4 {
+  animation: shoot-massive 0.6s ease-out;
+}
+
+/* Player 1 (left side) shoots toward right */
+@keyframes shoot-weak {
+  0% { transform: translateX(0) scaleX(1); }
+  50% { transform: translateX(40px) scaleX(1.08); }
+  100% { transform: translateX(0) scaleX(1); }
+}
+
+@keyframes shoot-medium {
+  0% { transform: translateX(0) scaleX(1); }
+  50% { transform: translateX(60px) scaleX(1.12); }
+  100% { transform: translateX(0) scaleX(1); }
+}
+
+@keyframes shoot-strong {
+  0% { transform: translateX(0) scaleX(1); }
+  50% { transform: translateX(80px) scaleX(1.15); }
+  100% { transform: translateX(0) scaleX(1); }
+}
+
+@keyframes shoot-stronger {
+  0% { transform: translateX(0) scaleX(1); }
+  50% { transform: translateX(100px) scaleX(1.2); }
+  100% { transform: translateX(0) scaleX(1); }
+}
+
+@keyframes shoot-massive {
+  0% { transform: translateX(0) scaleX(1); }
+  50% { transform: translateX(120px) scaleX(1.25); }
+  100% { transform: translateX(0) scaleX(1); }
+}
+
+/* DEFENDER ANIMATIONS: Player gets hit and shakes from impact */
+/* Defense level determines shake intensity (0=hit hardest, 1=partial hit, 2=no hit) */
+.defend0 {
+  animation: shake-intense 0.5s ease-in-out;
+}
+
+.defend1 {
+  animation: shake-light 0.5s ease-in-out;
+}
+
+.defend2 {
+  animation: shield-defend 0.5s ease-in-out;
+}
+
+/* Intense shaking from direct hit */
+@keyframes shake-intense {
+  0%   { transform: translateX(0) rotate(0deg); }
+  10%  { transform: translateX(-15px) rotate(-2deg); }
+  20%  { transform: translateX(15px) rotate(2deg); }
+  30%  { transform: translateX(-15px) rotate(-2deg); }
+  40%  { transform: translateX(15px) rotate(2deg); }
+  50%  { transform: translateX(-10px) rotate(-1deg); }
+  60%  { transform: translateX(10px) rotate(1deg); }
+  70%  { transform: translateX(-5px) rotate(-1deg); }
+  80%  { transform: translateX(5px) rotate(1deg); }
+  100% { transform: translateX(0) rotate(0deg); }
+}
+
+/* Light shaking from partial hit */
+@keyframes shake-light {
+  0%   { transform: translateX(0); }
+  20%  { transform: translateX(-8px); }
+  40%  { transform: translateX(8px); }
+  60%  { transform: translateX(-4px); }
+  80%  { transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
+
+/* Defensive stance - minimal movement on total defense */
+@keyframes shield-defend {
+  0%   { transform: scale(1) rotate(0deg); }
+  25%  { transform: scale(1.05) rotate(-2deg); }
+  50%  { transform: scale(1.08) rotate(0deg); }
+  75%  { transform: scale(1.05) rotate(2deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
