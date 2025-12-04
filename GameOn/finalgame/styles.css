@@ -190,6 +190,15 @@ p{
   padding: 15px 25px;
 }
 
+#reset {
+   font-family: "Quicksand", sans-serif;
+  font-size:15px;
+  font-style: normal;
+  border-radius: 20px;
+  background-color: rgb(181, 243, 251);
+  padding: 15px 25px;
+}
+
 .hidden {
     visibility: hidden;
     opacity: 0;
