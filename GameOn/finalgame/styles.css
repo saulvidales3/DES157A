@@ -24,6 +24,19 @@ img {
     margin-top: 0px;
 }
 
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 14px;
+    color: white;
+}
+
+a {
+    color: #add8e6; /* Light blue color for links */
+    text-decoration: none;
+}
+
 
 
 
@@ -76,11 +89,13 @@ p{
     /* box-shadow: linear-gradient(0deg,rgba(121, 48, 255, 1) 0%, rgba(222, 51, 171, 1) 100%); */
     filter: blur(0.5px);
     transform-origin: left center;
+    
+
 }
 
 /* Ray shooting from bottom-left to top-right (Player 1 attacking Player 2) */
 .ray-left-to-right {
-    left: 5%;
+    left: 25%;
     bottom: 10%;
     animation: shoot-ray-diagonal-lr 0.6s ease-out forwards;
 }
@@ -105,7 +120,7 @@ p{
 
 /* Ray shooting from bottom-right to top-left (Player 2 attacking Player 1) */
 .ray-right-to-left {
-    right: 5%;
+    right: 25%;
     bottom: 10%;
     animation: shoot-ray-diagonal-rl 0.6s ease-out forwards;
     transform-origin: right center;
@@ -182,12 +197,36 @@ p{
 }
 
 #attack {
+  
   font-family: "Quicksand", sans-serif;
   font-size:15px;
   font-style: normal;
   border-radius: 20px;
   background-color: rgb(251, 181, 232);
   padding: 15px 25px;
+}
+
+#quit {
+  position:absolute;
+  right: 300px;
+  bottom: 65px;
+  font-family: "Quicksand", sans-serif;
+  font-size:10px;
+  font-style: normal;
+  border-radius: 20px;
+  background-color: rgb(251, 181, 232);
+  padding: 5px 10px;
+}
+#musicButton {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-family: "Quicksand", sans-serif;
+  font-size:10px;
+  font-style: normal;
+  border-radius: 20px;
+  background-color: rgb(181, 243, 251);
+  padding: 5px 10px;
 }
 
 #reset {

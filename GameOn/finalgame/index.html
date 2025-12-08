@@ -19,9 +19,21 @@
 </head>
 <body>
     <h1>WHO WILL POP!</h1>
+    <button id="musicButton" aria-pressed="false">Play Music</button>
+    <!-- Background audio element (separate from the button) -->
+    <audio id="backgroundMusic" loop preload="auto">
+        <source src="audio/softvibes.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <!-- Short attack sound effect (ESpark) -->
+    <audio id="esparkSound" preload="auto">
+        <source src="audio/ESPARK1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+   
     <section id="game">
         <div>
-            <img src="images/playyer1.png" alt="player 1" width="600" height="600" id="player1">
+            <img src="images/splayer1.png" alt="player1" width="600" height="600" id="player1">
             <h2>Player's 1 Stability</h2>
             <!-- The divs inside the healthbar0 and healthbar1 divs are set to position
             absolute and have a width of 100%. As the game progresses their width is changed to 
@@ -34,7 +46,7 @@
         <!-- Rays container for attack beams -->
         <div id="rays"></div>
         <div>
-            <img src="images/Pllayyer2.png" alt="player2" width="600" height="600" id="player2">
+            <img src="images/splayer2.png" alt="player 2" width="600" height="600" id="player2">
             <h2>Player's 2 Stability</h2>
             <div class="health">
                 <div id="healthbar1"><div></div></div><p id="monsterhealth1">100%</p>
@@ -43,11 +55,17 @@
     </section>
     <section id="action">
         <div id="messages">
-            <p>Press the start button to randomly select the first monster to attack!</p>
+            <p>Press the start button to randomly select the first player to attack!</p>
             <button id="start">Start Battle!</button>
         </div>
         <button id="attack" class="hidden">Attack!</button>
+        <button id="quit">quit </button>
     </section>
+
+    <footer>
+
+        <p>Background Music and Ray Audio from <a href="https://www.bensound.com/">bensound</a> & <a href= https://www.partnersinrhyme.com/pir/PIRsfx.shtml> Partners In Rhyme</a></p>
+    </footer>
     
 </body>
 </html>

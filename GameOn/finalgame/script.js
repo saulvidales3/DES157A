@@ -9,6 +9,34 @@
     const startBtn = document.querySelector('#start');
     const attackBtn = document.querySelector('#attack');
     const raysContainer = document.querySelector('#rays');
+    const quitBtn = document.querySelector('#quit');
+    const bgMusic = document.getElementById('backgroundMusic');
+    const playMusicBtn = document.getElementById('musicButton');
+    const espark = document.getElementById('esparkSound');
+
+    // Toggle play/pause for background music (user gesture required by browsers)
+    function toggleBackgroundMusic(){
+        if(!bgMusic) return;
+        if(bgMusic.paused){
+            const p = bgMusic.play();
+            if(p !== undefined){
+                p.then(()=>{
+                    if(playMusicBtn) playMusicBtn.textContent = 'Pause Music';
+                }).catch(err => {
+                    console.warn('Background music play failed:', err);
+                });
+            }
+        } else {
+            bgMusic.pause();
+            if(playMusicBtn) playMusicBtn.textContent = 'Play Music';
+        }
+    }
+
+    if(playMusicBtn) {
+        playMusicBtn.addEventListener('click', toggleBackgroundMusic);
+    }
+
+    
 
     /* These variables are assigned later and used to keep track of
     the state of the game. Attacker and defender will end up just being
@@ -47,6 +75,11 @@
         messages.innerHTML = `<p>Get ready! <strong>${gameData.monsters[gameData.index]}</strong> was randomly selected to attack first. Click the attack button to see what happens.</p>`;
         attackBtn.className = 'showing';
     });
+
+    quitBtn.addEventListener('click', function(){
+        location.reload();
+    });
+
 
     /* Now that the button is showing, the player can attack */
     attackBtn.addEventListener('click', monsterAttack );
@@ -153,6 +186,23 @@
     function createRays(attackingPlayer, attackStrength){
         // Clear previous rays
         raysContainer.innerHTML = '';
+
+        // Play a short ESpark attack sound (reset to start each time so repeated attacks play)
+        if(espark){
+            try {
+                // restart sound from the beginning so rapid attacks replay
+                espark.currentTime = 0;
+                const p = espark.play();
+                if(p !== undefined){
+                    p.catch(err => {
+                        // Play might fail if not allowed by browser; this is expected without a user gesture
+                        console.warn('espark sound play failed:', err);
+                    });
+                }
+            } catch(e){
+                console.warn('espark play error', e);
+            }
+        }
         
         // Determine direction based on which player is attacking
         const isPlayer1 = attackingPlayer === 'player1';
