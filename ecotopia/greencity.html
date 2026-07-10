@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene fog="type: linear; color: #a8d5a2; near: 10; far: 40">
+
+  <!-- ===== SKY — warm sunrise green-gold ===== -->
+  <a-sky color="#b8e0a0"></a-sky>
+
+  <!-- ===== SUN ===== -->
+  <a-sphere position="8 14 -25" radius="1.2" color="#fff9c4"
+    material="shader: flat; color: #fff9c4; emissive: #fff9c4"></a-sphere>
+
+  <!-- ===== AMBIENT LIGHTING ===== -->
+  <a-light type="ambient" color="#d0f0c0" intensity="0.9"></a-light>
+  <a-light type="directional" position="8 14 -10" color="#fffde7" intensity="1.1"></a-light>
+  <a-light type="point" position="0 3 0" color="#a5d6a7" intensity="0.5" distance="20"></a-light>
+
+  <!-- ===== GROUND — rich living soil / moss ===== -->
+  <a-plane position="0 0 -10" rotation="-90 0 0" width="60" height="60" color="#4a7c4e"></a-plane>
+
+  <!-- Ground grass patches -->
+  <a-plane position="0 0.01 -10" rotation="-90 0 0" width="58" height="58" color="#5a9e5f" material="opacity:0.6"></a-plane>
+
+  <!-- ===== WINDING LIVING PATH (mossy stone) ===== -->
+  <a-box position="0 0.02 -4" width="2" height="0.01" depth="4" color="#7daa72"></a-box>
+  <a-box position="0 0.02 -8" width="2" height="0.01" depth="4" color="#7daa72"></a-box>
+  <a-box position="1 0.02 -10" width="2" height="0.01" depth="3" color="#7daa72" rotation="0 15 0"></a-box>
+  <a-box position="-1 0.02 -12" width="2" height="0.01" depth="3" color="#7daa72" rotation="0 -10 0"></a-box>
+
+  <!-- ===== WATER CHANNEL / CANAL ===== -->
+  <a-box position="-5.5 0.03 -10" width="1.2" height="0.05" depth="20" color="#64b5f6" material="opacity:0.75"></a-box>
+  <a-box position="5.5 0.03 -10" width="1.2" height="0.05" depth="20" color="#64b5f6" material="opacity:0.75"></a-box>
+
+  <!-- ===== LILY PADS on water ===== -->
+  <a-cylinder position="-5.5 0.08 -8" radius="0.3" height="0.02" color="#388e3c"></a-cylinder>
+  <a-cylinder position="-5.5 0.08 -12" radius="0.25" height="0.02" color="#2e7d32"></a-cylinder>
+  <a-cylinder position="5.5 0.08 -9" radius="0.28" height="0.02" color="#43a047"></a-cylinder>
+  <a-sphere position="-5.5 0.12 -8" radius="0.07" color="#e91e63"></a-sphere>
+  <a-sphere position="5.5 0.12 -9" radius="0.06" color="#f48fb1"></a-sphere>
+
+  <!-- =========================================================
+       BUILDING 1 — Tall Living Tower (left)
+       Completely covered in vertical gardens
+  ========================================================= -->
+
+  <!-- Core structure — barely visible, mostly green -->
+  <a-box position="-5 5 -12" width="3" height="10" depth="2.5" color="#2d5a27"></a-box>
+
+  <!-- Terraced garden balconies stacked up the tower -->
+  <a-box position="-5 1.5 -10.9" width="3.4" height="0.18" depth="0.6" color="#3d8b3a"></a-box>
+  <a-box position="-5 2.8 -10.9" width="3.4" height="0.18" depth="0.6" color="#4caf50"></a-box>
+  <a-box position="-5 4.1 -10.9" width="3.4" height="0.18" depth="0.6" color="#388e3c"></a-box>
+  <a-box position="-5 5.4 -10.9" width="3.4" height="0.18" depth="0.6" color="#43a047"></a-box>
+  <a-box position="-5 6.7 -10.9" width="3.4" height="0.18" depth="0.6" color="#2e7d32"></a-box>
+  <a-box position="-5 8.0 -10.9" width="3.4" height="0.18" depth="0.6" color="#4caf50"></a-box>
+  <a-box position="-5 9.3 -10.9" width="3.4" height="0.18" depth="0.6" color="#388e3c"></a-box>
+
+  <!-- Hanging vines down the facade (vertical green panels) -->
+  <a-box position="-6.1 5 -11.7" width="0.2" height="9" depth="0.1" color="#33691e"></a-box>
+  <a-box position="-5.5 5 -11.7" width="0.2" height="9" depth="0.1" color="#558b2f"></a-box>
+  <a-box position="-5.0 5 -11.7" width="0.2" height="9" depth="0.1" color="#33691e"></a-box>
+  <a-box position="-4.5 5 -11.7" width="0.2" height="9" depth="0.1" color="#558b2f"></a-box>
+  <a-box position="-3.9 5 -11.7" width="0.2" height="9" depth="0.1" color="#33691e"></a-box>
+
+  <!-- Rooftop garden -->
+  <a-box position="-5 10.15 -12" width="3.4" height="0.3" depth="2.8" color="#2e7d32"></a-box>
+  <!-- Rooftop trees -->
+  <a-cylinder position="-5.5 10.7 -12" radius="0.08" height="1.0" color="#5d4037"></a-cylinder>
+  <a-sphere position="-5.5 11.4 -12" radius="0.5" color="#1b5e20"></a-sphere>
+  <a-cylinder position="-4.5 10.7 -12" radius="0.08" height="0.8" color="#5d4037"></a-cylinder>
+  <a-sphere position="-4.5 11.2 -12" radius="0.4" color="#2e7d32"></a-sphere>
+  <a-cylinder position="-5 10.7 -11.3" radius="0.06" height="0.7" color="#6d4c41"></a-cylinder>
+  <a-sphere position="-5 11.1 -11.3" radius="0.35" color="#388e3c"></a-sphere>
+
+  <!-- Flowers on balconies -->
+  <a-sphere position="-6 2.95 -10.85" radius="0.08" color="#ff7043"></a-sphere>
+  <a-sphere position="-5.5 2.95 -10.85" radius="0.07" color="#ffca28"></a-sphere>
+  <a-sphere position="-4.5 4.25 -10.85" radius="0.08" color="#e91e63"></a-sphere>
+  <a-sphere position="-5 5.55 -10.85" radius="0.07" color="#ff7043"></a-sphere>
+  <a-sphere position="-5.8 6.85 -10.85" radius="0.08" color="#fff176"></a-sphere>
+  <a-sphere position="-4.2 8.15 -10.85" radius="0.07" color="#f48fb1"></a-sphere>
+
+  <!-- =========================================================
+       BUILDING 2 — Dome Greenhouse Community Hub (center)
+  ========================================================= -->
+
+  <!-- Dome structure - glass and greenery -->
+  <a-sphere position="0 2 -10" radius="3" color="#a5d6a7" material="opacity:0.35; transparent:true; side:double"></a-sphere>
+  <!-- Inner vegetation mass -->
+  <a-sphere position="0 1.5 -10" radius="2.4" color="#2e7d32" material="opacity:0.85"></a-sphere>
+  <a-sphere position="0.5 2.2 -9.5" radius="1.2" color="#1b5e20"></a-sphere>
+  <a-sphere position="-0.6 2.5 -10.5" radius="1.0" color="#33691e"></a-sphere>
+  <!-- Dome base ring -->
+  <a-torus position="0 -0.1 -10" radius="2.9" radius-tubular="0.12" color="#4caf50"></a-torus>
+  <!-- Dome archway entrance -->
+  <a-box position="0 0.6 -7.05" width="1.2" height="1.2" depth="0.2" color="#1b5e20"></a-box>
+  <a-torus position="0 1.2 -7.05" radius="0.6" radius-tubular="0.12" rotation="0 0 0" color="#33691e"></a-torus>
+  <!-- Vine arch over entrance -->
+  <a-box position="-0.6 1.0 -7.1" width="0.1" height="2" depth="0.1" color="#388e3c"></a-box>
+  <a-box position="0.6 1.0 -7.1" width="0.1" height="2" depth="0.1" color="#388e3c"></a-box>
+  <!-- Tall spire tree emerging from dome top -->
+  <a-cylinder position="0 5.0 -10" radius="0.1" height="2" color="#4e342e"></a-cylinder>
+  <a-cone position="0 7.0 -10" radius-bottom="0.9" radius-top="0" height="2.5" color="#1b5e20"></a-cone>
+  <a-cone position="0 8.4 -10" radius-bottom="0.65" radius-top="0" height="1.8" color="#2e7d32"></a-cone>
+  <a-cone position="0 9.4 -10" radius-bottom="0.4" radius-top="0" height="1.4" color="#388e3c"></a-cone>
+
+  <!-- =========================================================
+       BUILDING 3 — Stepped Pyramid Garden Tower (right)
+  ========================================================= -->
+
+  <!-- Step 1 (base) -->
+  <a-box position="5.5 0.6 -12" width="5" height="1.2" depth="4" color="#2e7d32"></a-box>
+  <a-box position="5.5 0.01 -12" width="5.2" height="0.05" depth="4.2" color="#4caf50"></a-box>
+  <!-- Step 2 -->
+  <a-box position="5.5 2.1 -12" width="4" height="1.5" depth="3" color="#33691e"></a-box>
+  <a-box position="5.5 1.26 -12" width="4.2" height="0.08" depth="3.2" color="#43a047"></a-box>
+  <!-- Step 3 -->
+  <a-box position="5.5 3.7 -12" width="3" height="1.5" depth="2.2" color="#2e7d32"></a-box>
+  <a-box position="5.5 2.88 -12" width="3.2" height="0.08" depth="2.4" color="#66bb6a"></a-box>
+  <!-- Step 4 top -->
+  <a-box position="5.5 5.3 -12" width="2" height="1.5" depth="1.5" color="#1b5e20"></a-box>
+  <a-box position="5.5 4.5 -12" width="2.2" height="0.08" depth="1.7" color="#81c784"></a-box>
+
+  <!-- Garden plantings on each terrace -->
+  <!-- Terrace 1 plants -->
+  <a-sphere position="4 1.5 -10.5" radius="0.5" color="#388e3c"></a-sphere>
+  <a-sphere position="7 1.5 -10.5" radius="0.45" color="#2e7d32"></a-sphere>
+  <a-sphere position="5.5 1.5 -10.5" radius="0.4" color="#43a047"></a-sphere>
+  <!-- Terrace 2 plants -->
+  <a-sphere position="4.5 3 -11" radius="0.42" color="#33691e"></a-sphere>
+  <a-sphere position="6.5 3 -11" radius="0.38" color="#2e7d32"></a-sphere>
+  <!-- Terrace 3 plants -->
+  <a-sphere position="5.5 4.6 -11.5" radius="0.35" color="#1b5e20"></a-sphere>
+  <a-sphere position="4.8 4.6 -11.5" radius="0.3" color="#388e3c"></a-sphere>
+  <!-- Topmost small tree -->
+  <a-cylinder position="5.5 6.25 -12" radius="0.07" height="0.8" color="#4e342e"></a-cylinder>
+  <a-sphere position="5.5 6.9 -12" radius="0.5" color="#1b5e20"></a-sphere>
+
+  <!-- Flowers on terraces -->
+  <a-sphere position="3.8 1.55 -10.5" radius="0.09" color="#ffca28"></a-sphere>
+  <a-sphere position="7.2 1.55 -10.5" radius="0.08" color="#ff7043"></a-sphere>
+  <a-sphere position="5.2 3.05 -11" radius="0.08" color="#e91e63"></a-sphere>
+  <a-sphere position="6.8 3.05 -11" radius="0.07" color="#fff176"></a-sphere>
+
+  <!-- =========================================================
+       BUILDING 4 — Vine-Wrapped Slender Spire (far left bg)
+  ========================================================= -->
+  <a-box position="-8.5 6 -16" width="1.5" height="12" depth="1.5" color="#37474f"></a-box>
+  <!-- Thick vine coverage -->
+  <a-box position="-8.5 6 -15.27" width="1.7" height="12" depth="0.2" color="#2e7d32" material="opacity:0.9"></a-box>
+  <a-box position="-9.27 6 -16" width="0.2" height="12" depth="1.7" color="#388e3c" material="opacity:0.85"></a-box>
+  <!-- Spire top greenery -->
+  <a-cone position="-8.5 12.8 -16" radius-bottom="1.1" radius-top="0" height="2" color="#1b5e20"></a-cone>
+  <!-- Balconies -->
+  <a-box position="-8.5 4 -15.1" width="2" height="0.12" depth="0.5" color="#4caf50"></a-box>
+  <a-box position="-8.5 7 -15.1" width="2" height="0.12" depth="0.5" color="#388e3c"></a-box>
+  <a-box position="-8.5 10 -15.1" width="2" height="0.12" depth="0.5" color="#4caf50"></a-box>
+
+  <!-- =========================================================
+       BUILDING 5 — Wide Low Greenhouse / Market (far right bg)
+  ========================================================= -->
+  <a-box position="9 1.8 -14" width="6" height="3.6" depth="4" color="#1a3a1a"></a-box>
+  <!-- Glass roof panels -->
+  <a-box position="9 3.85 -14" width="6.2" height="0.15" depth="4.2" color="#a5d6a7" material="opacity:0.5; transparent:true"></a-box>
+  <!-- Plant life inside (visible through glass) -->
+  <a-sphere position="8 2.5 -14" radius="0.9" color="#2e7d32"></a-sphere>
+  <a-sphere position="10 2.5 -14" radius="0.8" color="#388e3c"></a-sphere>
+  <a-sphere position="9 3 -13.5" radius="0.7" color="#1b5e20"></a-sphere>
+  <!-- Exterior climbing plants -->
+  <a-box position="7 1.8 -12.05" width="0.15" height="3.6" depth="0.1" color="#33691e"></a-box>
+  <a-box position="8 1.8 -12.05" width="0.15" height="3.6" depth="0.1" color="#558b2f"></a-box>
+  <a-box position="9 1.8 -12.05" width="0.15" height="3.6" depth="0.1" color="#33691e"></a-box>
+  <a-box position="10 1.8 -12.05" width="0.15" height="3.6" depth="0.1" color="#558b2f"></a-box>
+  <a-box position="11 1.8 -12.05" width="0.15" height="3.6" depth="0.1" color="#33691e"></a-box>
+  <!-- Roof garden on greenhouse -->
+  <a-sphere position="7.5 4.2 -14" radius="0.5" color="#2e7d32"></a-sphere>
+  <a-sphere position="9 4.3 -14" radius="0.6" color="#388e3c"></a-sphere>
+  <a-sphere position="10.5 4.1 -14" radius="0.45" color="#1b5e20"></a-sphere>
+
+  <!-- =========================================================
+       FOREGROUND TREES (lining the path)
+  ========================================================= -->
+
+  <!-- Left tree row -->
+  <a-cylinder position="-2.5 1.5 -5" radius="0.1" height="3" color="#5d4037"></a-cylinder>
+  <a-sphere position="-2.5 3.3 -5" radius="0.9" color="#2e7d32"></a-sphere>
+  <a-sphere position="-2.2 3.8 -5" radius="0.6" color="#388e3c"></a-sphere>
+
+  <a-cylinder position="-3 1.4 -8" radius="0.12" height="2.8" color="#4e342e"></a-cylinder>
+  <a-sphere position="-3 3 -8" radius="1.0" color="#1b5e20"></a-sphere>
+  <a-sphere position="-3.3 3.6 -8" radius="0.65" color="#33691e"></a-sphere>
+
+  <a-cylinder position="-2.5 1.3 -11" radius="0.1" height="2.6" color="#6d4c41"></a-cylinder>
+  <a-sphere position="-2.5 2.8 -11" radius="0.85" color="#2e7d32"></a-sphere>
+
+  <!-- Right tree row -->
+  <a-cylinder position="2.5 1.5 -5" radius="0.1" height="3" color="#5d4037"></a-cylinder>
+  <a-sphere position="2.5 3.3 -5" radius="0.9" color="#33691e"></a-sphere>
+  <a-sphere position="2.8 3.8 -5" radius="0.55" color="#1b5e20"></a-sphere>
+
+  <a-cylinder position="3 1.4 -8" radius="0.12" height="2.8" color="#4e342e"></a-cylinder>
+  <a-sphere position="3 3 -8" radius="1.0" color="#2e7d32"></a-sphere>
+
+  <a-cylinder position="2.5 1.3 -11" radius="0.1" height="2.6" color="#6d4c41"></a-cylinder>
+  <a-sphere position="2.5 2.8 -11" radius="0.85" color="#388e3c"></a-sphere>
+
+  <!-- Extra scattered foreground trees -->
+  <a-cylinder position="-7 1.5 -7" radius="0.13" height="3.2" color="#5d4037"></a-cylinder>
+  <a-sphere position="-7 3.5 -7" radius="1.1" color="#2e7d32"></a-sphere>
+  <a-sphere position="-7.4 4 -7" radius="0.7" color="#1b5e20"></a-sphere>
+
+  <a-cylinder position="7.5 1.5 -7" radius="0.11" height="2.8" color="#4e342e"></a-cylinder>
+  <a-sphere position="7.5 3.2 -7" radius="1.0" color="#33691e"></a-sphere>
+
+  <!-- =========================================================
+       FLOWERING MEADOW PATCHES
+  ========================================================= -->
+  <!-- Left meadow -->
+  <a-sphere position="-1.5 0.15 -3" radius="0.12" color="#ff7043"></a-sphere>
+  <a-sphere position="-2 0.15 -3.5" radius="0.1" color="#ffca28"></a-sphere>
+  <a-sphere position="-1 0.15 -4" radius="0.11" color="#e91e63"></a-sphere>
+  <a-sphere position="-2.5 0.15 -4" radius="0.09" color="#fff176"></a-sphere>
+  <a-sphere position="-1.8 0.15 -2.5" radius="0.1" color="#f48fb1"></a-sphere>
+  <a-sphere position="-3 0.15 -5" radius="0.12" color="#ff7043"></a-sphere>
+  <a-sphere position="-1.2 0.15 -5.5" radius="0.1" color="#ffca28"></a-sphere>
+
+  <!-- Right meadow -->
+  <a-sphere position="1.5 0.15 -3" radius="0.12" color="#e91e63"></a-sphere>
+  <a-sphere position="2 0.15 -3.5" radius="0.1" color="#ff7043"></a-sphere>
+  <a-sphere position="1 0.15 -4" radius="0.11" color="#fff176"></a-sphere>
+  <a-sphere position="2.5 0.15 -4.5" radius="0.09" color="#f48fb1"></a-sphere>
+  <a-sphere position="1.8 0.15 -2.5" radius="0.1" color="#ffca28"></a-sphere>
+
+  <!-- Scattered background wildflowers -->
+  <a-sphere position="-7 0.15 -10" radius="0.13" color="#ff7043"></a-sphere>
+  <a-sphere position="-7.5 0.15 -11" radius="0.1" color="#fff176"></a-sphere>
+  <a-sphere position="-6.5 0.15 -13" radius="0.11" color="#e91e63"></a-sphere>
+  <a-sphere position="8 0.15 -10" radius="0.13" color="#ffca28"></a-sphere>
+  <a-sphere position="9 0.15 -8" radius="0.1" color="#f48fb1"></a-sphere>
+  <a-sphere position="7.5 0.15 -13" radius="0.11" color="#ff7043"></a-sphere>
+
+  <!-- =========================================================
+       HEDGEROWS & GROUND SHRUBS
+  ========================================================= -->
+  <a-sphere position="-4 0.4 -5.5" radius="0.55" color="#388e3c"></a-sphere>
+  <a-sphere position="-4.8 0.4 -5.8" radius="0.5" color="#2e7d32"></a-sphere>
+  <a-sphere position="-3.3 0.4 -5.3" radius="0.45" color="#43a047"></a-sphere>
+
+  <a-sphere position="4 0.4 -5.5" radius="0.55" color="#33691e"></a-sphere>
+  <a-sphere position="4.8 0.4 -5.8" radius="0.5" color="#2e7d32"></a-sphere>
+
+  <a-sphere position="-7 0.4 -14" radius="0.65" color="#2e7d32"></a-sphere>
+  <a-sphere position="-7.8 0.4 -14.5" radius="0.55" color="#388e3c"></a-sphere>
+  <a-sphere position="8.5 0.4 -11" radius="0.6" color="#1b5e20"></a-sphere>
+  <a-sphere position="9.2 0.4 -11.5" radius="0.5" color="#33691e"></a-sphere>
+
+  <!-- =========================================================
+       BIRDS / BUTTERFLIES (simple coloured spheres in sky)
+  ========================================================= -->
+  <a-sphere position="-2 8 -18" radius="0.06" color="#ffffff"></a-sphere>
+  <a-sphere position="-1.6 8.2 -18" radius="0.06" color="#ffffff"></a-sphere>
+  <a-sphere position="3 9 -20" radius="0.06" color="#ffffff"></a-sphere>
+  <a-sphere position="3.4 9.2 -20" radius="0.06" color="#ffffff"></a-sphere>
+
+  <!-- Butterfly near entrance -->
+  <a-sphere position="0.5 2 -6.5" radius="0.05" color="#ff7043"></a-sphere>
+  <a-sphere position="0.7 2.1 -6.5" radius="0.05" color="#ffca28"></a-sphere>
+
+  <!-- =========================================================
+       SOLAR CANOPY STRUCTURES (minimal infrastructure)
+       Barely visible beneath flowering vines
+  ========================================================= -->
+  <!-- Thin pole + vine-covered horizontal panel -->
+  <a-cylinder position="-4 1.5 -6" radius="0.04" height="3" color="#78909c"></a-cylinder>
+  <a-box position="-4 3.05 -6" width="1.5" height="0.06" depth="0.8" color="#388e3c" material="opacity:0.85"></a-box>
+  <a-sphere position="-4.4 3.15 -6" radius="0.1" color="#ffca28"></a-sphere>
+
+  <a-cylinder position="4 1.5 -6" radius="0.04" height="3" color="#78909c"></a-cylinder>
+  <a-box position="4 3.05 -6" width="1.5" height="0.06" depth="0.8" color="#2e7d32" material="opacity:0.85"></a-box>
+  <a-sphere position="4.3 3.15 -6" radius="0.1" color="#e91e63"></a-sphere>
+
+  <!-- =========================================================
+       BACKGROUND FOREST LINE
+  ========================================================= -->
+  <a-sphere position="-12 3 -22" radius="3.5" color="#1b5e20" material="opacity:0.9"></a-sphere>
+  <a-sphere position="-9 2.5 -22" radius="2.8" color="#2e7d32"></a-sphere>
+  <a-sphere position="-6 2 -20" radius="2.2" color="#33691e"></a-sphere>
+  <a-sphere position="6 2 -20" radius="2.2" color="#1b5e20"></a-sphere>
+  <a-sphere position="9 2.5 -22" radius="2.8" color="#2e7d32"></a-sphere>
+  <a-sphere position="12 3 -22" radius="3.2" color="#33691e"></a-sphere>
+  <a-sphere position="15 3.5 -24" radius="3.8" color="#1b5e20" material="opacity:0.85"></a-sphere>
+  <a-sphere position="-15 3.5 -24" radius="3.8" color="#2e7d32" material="opacity:0.85"></a-sphere>
+
+  <!-- =========================================================
+       SCATTERED TREES — varied heights across the cityscape
+  ========================================================= -->
+
+  <!-- === TINY SAPLINGS (h ~1–1.5m) === -->
+  <a-cylinder position="1.2 0.5 -3" radius="0.05" height="1.0" color="#6d4c41"></a-cylinder>
+  <a-sphere position="1.2 1.15 -3" radius="0.28" color="#66bb6a"></a-sphere>
+
+  <a-cylinder position="-1.4 0.5 -6" radius="0.05" height="1.0" color="#5d4037"></a-cylinder>
+  <a-sphere position="-1.4 1.15 -6" radius="0.25" color="#81c784"></a-sphere>
+
+  <a-cylinder position="3.5 0.5 -4" radius="0.05" height="0.9" color="#6d4c41"></a-cylinder>
+  <a-sphere position="3.5 1.05 -4" radius="0.22" color="#a5d6a7"></a-sphere>
+
+  <a-cylinder position="-3.8 0.5 -3.5" radius="0.04" height="0.8" color="#5d4037"></a-cylinder>
+  <a-sphere position="-3.8 1.0 -3.5" radius="0.2" color="#66bb6a"></a-sphere>
+
+  <a-cylinder position="6.5 0.5 -5" radius="0.05" height="1.1" color="#4e342e"></a-cylinder>
+  <a-sphere position="6.5 1.2 -5" radius="0.27" color="#81c784"></a-sphere>
+
+  <a-cylinder position="-6.2 0.5 -5.5" radius="0.05" height="0.95" color="#6d4c41"></a-cylinder>
+  <a-sphere position="-6.2 1.1 -5.5" radius="0.24" color="#a5d6a7"></a-sphere>
+
+  <a-cylinder position="4.5 0.5 -9" radius="0.05" height="1.0" color="#5d4037"></a-cylinder>
+  <a-sphere position="4.5 1.15 -9" radius="0.26" color="#66bb6a"></a-sphere>
+
+  <a-cylinder position="-4.2 0.5 -9.5" radius="0.05" height="1.1" color="#4e342e"></a-cylinder>
+  <a-sphere position="-4.2 1.2 -9.5" radius="0.25" color="#81c784"></a-sphere>
+
+  <a-cylinder position="1.5 0.5 -13" radius="0.04" height="0.85" color="#6d4c41"></a-cylinder>
+  <a-sphere position="1.5 1.0 -13" radius="0.22" color="#a5d6a7"></a-sphere>
+
+  <a-cylinder position="-1.8 0.5 -14" radius="0.05" height="1.0" color="#5d4037"></a-cylinder>
+  <a-sphere position="-1.8 1.15 -14" radius="0.24" color="#66bb6a"></a-sphere>
+
+  <!-- === SMALL TREES (h ~2–3m) === -->
+  <a-cylinder position="8.5 1.0 -6" radius="0.08" height="2.0" color="#5d4037"></a-cylinder>
+  <a-sphere position="8.5 2.2 -6" radius="0.55" color="#43a047"></a-sphere>
+  <a-sphere position="8.8 2.6 -6" radius="0.35" color="#2e7d32"></a-sphere>
+
+  <a-cylinder position="-8.5 1.0 -6" radius="0.08" height="2.0" color="#4e342e"></a-cylinder>
+  <a-sphere position="-8.5 2.2 -6" radius="0.52" color="#388e3c"></a-sphere>
+  <a-sphere position="-8.2 2.7 -6" radius="0.32" color="#1b5e20"></a-sphere>
+
+  <a-cylinder position="6.5 1.0 -9" radius="0.09" height="2.2" color="#6d4c41"></a-cylinder>
+  <a-sphere position="6.5 2.3 -9" radius="0.6" color="#33691e"></a-sphere>
+  <a-sphere position="6.8 2.8 -9" radius="0.38" color="#2e7d32"></a-sphere>
+
+  <a-cylinder position="-6.5 1.0 -9" radius="0.08" height="2.1" color="#5d4037"></a-cylinder>
+  <a-sphere position="-6.5 2.25 -9" radius="0.58" color="#388e3c"></a-sphere>
+
+  <a-cylinder position="7 1.0 -12" radius="0.09" height="2.3" color="#4e342e"></a-cylinder>
+  <a-sphere position="7 2.35 -12" radius="0.62" color="#2e7d32"></a-sphere>
+  <a-sphere position="7.3 2.9 -12" radius="0.4" color="#33691e"></a-sphere>
+
+  <a-cylinder position="-7 1.0 -12" radius="0.09" height="2.2" color="#6d4c41"></a-cylinder>
+  <a-sphere position="-7 2.3 -12" radius="0.6" color="#1b5e20"></a-sphere>
+  <a-sphere position="-6.7 2.8 -12" radius="0.38" color="#388e3c"></a-sphere>
+
+  <a-cylinder position="10 1.0 -10" radius="0.08" height="2.0" color="#5d4037"></a-cylinder>
+  <a-sphere position="10 2.2 -10" radius="0.55" color="#43a047"></a-sphere>
+
+  <a-cylinder position="-10 1.0 -10" radius="0.08" height="2.0" color="#4e342e"></a-cylinder>
+  <a-sphere position="-10 2.2 -10" radius="0.55" color="#2e7d32"></a-sphere>
+
+  <a-cylinder position="2 1.0 -16" radius="0.09" height="2.3" color="#6d4c41"></a-cylinder>
+  <a-sphere position="2 2.35 -16" radius="0.6" color="#33691e"></a-sphere>
+
+  <a-cylinder position="-2 1.0 -16" radius="0.08" height="2.1" color="#5d4037"></a-cylinder>
+  <a-sphere position="-2 2.25 -16" radius="0.58" color="#388e3c"></a-sphere>
+
+  <a-cylinder position="4 1.0 -17" radius="0.09" height="2.4" color="#4e342e"></a-cylinder>
+  <a-sphere position="4 2.4 -17" radius="0.63" color="#1b5e20"></a-sphere>
+
+  <a-cylinder position="-4 1.0 -17" radius="0.08" height="2.2" color="#6d4c41"></a-cylinder>
+  <a-sphere position="-4 2.3 -17" radius="0.6" color="#2e7d32"></a-sphere>
+
+  <!-- === MEDIUM TREES (h ~4–6m) === -->
+  <a-cylinder position="11 2.0 -13" radius="0.13" height="4.0" color="#4e342e"></a-cylinder>
+  <a-sphere position="11 4.2 -13" radius="1.1" color="#2e7d32"></a-sphere>
+  <a-sphere position="11.4 4.8 -13" radius="0.7" color="#1b5e20"></a-sphere>
+
+  <a-cylinder position="-11 2.0 -13" radius="0.13" height="4.0" color="#5d4037"></a-cylinder>
+  <a-sphere position="-11 4.2 -13" radius="1.1" color="#388e3c"></a-sphere>
+  <a-sphere position="-11.4 4.8 -13" radius="0.7" color="#2e7d32"></a-sphere>
+
+  <a-cylinder position="9 2.0 -16" radius="0.14" height="4.5" color="#6d4c41"></a-cylinder>
+  <a-sphere position="9 4.5 -16" radius="1.2" color="#33691e"></a-sphere>
+  <a-sphere position="9.5 5.2 -16" radius="0.75" color="#1b5e20"></a-sphere>
+
+  <a-cylinder position="-9 2.0 -16" radius="0.13" height="4.3" color="#4e342e"></a-cylinder>
+  <a-sphere position="-9 4.35 -16" radius="1.15" color="#2e7d32"></a-sphere>
+  <a-sphere position="-9.4 5.0 -16" radius="0.72" color="#388e3c"></a-sphere>
+
+  <a-cylinder position="6 2.0 -18" radius="0.14" height="4.8" color="#5d4037"></a-cylinder>
+  <a-sphere position="6 4.6 -18" radius="1.25" color="#1b5e20"></a-sphere>
+  <a-sphere position="6.5 5.3 -18" radius="0.8" color="#33691e"></a-sphere>
+
+  <a-cylinder position="-6 2.0 -18" radius="0.13" height="4.5" color="#6d4c41"></a-cylinder>
+  <a-sphere position="-6 4.45 -18" radius="1.2" color="#2e7d32"></a-sphere>
+  <a-sphere position="-6.4 5.1 -18" radius="0.75" color="#388e3c"></a-sphere>
+
+  <a-cylinder position="-3 2.0 -15" radius="0.12" height="4.0" color="#4e342e"></a-cylinder>
+  <a-sphere position="-3 4.2 -15" radius="1.1" color="#33691e"></a-sphere>
+  <a-sphere position="-2.6 4.8 -15" radius="0.68" color="#1b5e20"></a-sphere>
+
+  <a-cylinder position="3 2.0 -15" radius="0.12" height="3.8" color="#5d4037"></a-cylinder>
+  <a-sphere position="3 4.1 -15" radius="1.05" color="#2e7d32"></a-sphere>
+  <a-sphere position="3.4 4.7 -15" radius="0.65" color="#388e3c"></a-sphere>
+
+  <!-- === TALL TREES (h ~7–9m) === -->
+  <a-cylinder position="-10 3.5 -19" radius="0.16" height="7.0" color="#4e342e"></a-cylinder>
+  <a-sphere position="-10 7.2 -19" radius="1.6" color="#1b5e20"></a-sphere>
+  <a-sphere position="-10.5 8.1 -19" radius="1.0" color="#33691e"></a-sphere>
+  <a-sphere position="-9.5 8.5 -19" radius="0.75" color="#2e7d32"></a-sphere>
+
+  <a-cylinder position="10 3.5 -19" radius="0.16" height="7.0" color="#5d4037"></a-cylinder>
+  <a-sphere position="10 7.2 -19" radius="1.6" color="#2e7d32"></a-sphere>
+  <a-sphere position="10.5 8.1 -19" radius="1.0" color="#388e3c"></a-sphere>
+  <a-sphere position="9.5 8.5 -19" radius="0.75" color="#1b5e20"></a-sphere>
+
+  <a-cylinder position="-13 4.0 -20" radius="0.18" height="8.0" color="#6d4c41"></a-cylinder>
+  <a-sphere position="-13 8.2 -20" radius="1.8" color="#33691e"></a-sphere>
+  <a-sphere position="-13.6 9.2 -20" radius="1.1" color="#1b5e20"></a-sphere>
+  <a-sphere position="-12.4 9.0 -20" radius="0.9" color="#2e7d32"></a-sphere>
+
+  <a-cylinder position="13 4.0 -20" radius="0.18" height="8.0" color="#4e342e"></a-cylinder>
+  <a-sphere position="13 8.2 -20" radius="1.8" color="#2e7d32"></a-sphere>
+  <a-sphere position="13.6 9.2 -20" radius="1.1" color="#388e3c"></a-sphere>
+  <a-sphere position="12.4 9.0 -20" radius="0.9" color="#1b5e20"></a-sphere>
+
+  <a-cylinder position="0 4.0 -19" radius="0.17" height="8.5" color="#5d4037"></a-cylinder>
+  <a-sphere position="0 8.5 -19" radius="1.9" color="#1b5e20"></a-sphere>
+  <a-sphere position="0.6 9.5 -19" radius="1.2" color="#33691e"></a-sphere>
+  <a-sphere position="-0.7 9.3 -19" radius="1.0" color="#2e7d32"></a-sphere>
+
+  <!-- === VERY TALL ANCIENT TREES (h ~11–14m) === -->
+  <!-- These loom behind the buildings like a living backdrop -->
+  <a-cylinder position="-14 5.5 -23" radius="0.22" height="11.0" color="#3e2723"></a-cylinder>
+  <a-sphere position="-14 11.2 -23" radius="2.2" color="#1b5e20"></a-sphere>
+  <a-sphere position="-14.8 12.4 -23" radius="1.4" color="#33691e"></a-sphere>
+  <a-sphere position="-13.2 12.0 -23" radius="1.1" color="#2e7d32"></a-sphere>
+
+  <a-cylinder position="14 5.5 -23" radius="0.22" height="11.0" color="#3e2723"></a-cylinder>
+  <a-sphere position="14 11.2 -23" radius="2.2" color="#2e7d32"></a-sphere>
+  <a-sphere position="14.8 12.4 -23" radius="1.4" color="#388e3c"></a-sphere>
+  <a-sphere position="13.2 12.0 -23" radius="1.1" color="#1b5e20"></a-sphere>
+
+  <a-cylinder position="-5 6.0 -24" radius="0.2" height="12.0" color="#4e342e"></a-cylinder>
+  <a-sphere position="-5 12.2 -24" radius="2.4" color="#33691e"></a-sphere>
+  <a-sphere position="-5.8 13.5 -24" radius="1.5" color="#1b5e20"></a-sphere>
+  <a-sphere position="-4.2 13.2 -24" radius="1.2" color="#2e7d32"></a-sphere>
+
+  <a-cylinder position="5 6.0 -24" radius="0.2" height="12.0" color="#5d4037"></a-cylinder>
+  <a-sphere position="5 12.2 -24" radius="2.4" color="#1b5e20"></a-sphere>
+  <a-sphere position="5.8 13.5 -24" radius="1.5" color="#2e7d32"></a-sphere>
+  <a-sphere position="4.2 13.2 -24" radius="1.2" color="#388e3c"></a-sphere>
+
+  <a-cylinder position="-18 6.5 -26" radius="0.24" height="13.0" color="#3e2723"></a-cylinder>
+  <a-sphere position="-18 13.2 -26" radius="2.6" color="#2e7d32"></a-sphere>
+  <a-sphere position="-18.9 14.6 -26" radius="1.6" color="#1b5e20"></a-sphere>
+
+  <a-cylinder position="18 6.5 -26" radius="0.24" height="13.0" color="#3e2723"></a-cylinder>
+  <a-sphere position="18 13.2 -26" radius="2.6" color="#33691e"></a-sphere>
+  <a-sphere position="18.9 14.6 -26" radius="1.6" color="#2e7d32"></a-sphere>
+
+  <!-- Conifer / pine spires mixed in for variety -->
+  <a-cylinder position="-16 3.0 -21" radius="0.12" height="6.0" color="#4e342e"></a-cylinder>
+  <a-cone position="-16 7.5 -21" radius-bottom="1.3" radius-top="0" height="3.5" color="#1b5e20"></a-cone>
+  <a-cone position="-16 9.2 -21" radius-bottom="0.9" radius-top="0" height="2.5" color="#2e7d32"></a-cone>
+  <a-cone position="-16 10.4 -21" radius-bottom="0.55" radius-top="0" height="1.8" color="#33691e"></a-cone>
+
+  <a-cylinder position="16 3.0 -21" radius="0.12" height="6.0" color="#5d4037"></a-cylinder>
+  <a-cone position="16 7.5 -21" radius-bottom="1.3" radius-top="0" height="3.5" color="#2e7d32"></a-cone>
+  <a-cone position="16 9.2 -21" radius-bottom="0.9" radius-top="0" height="2.5" color="#1b5e20"></a-cone>
+  <a-cone position="16 10.4 -21" radius-bottom="0.55" radius-top="0" height="1.8" color="#388e3c"></a-cone>
+
+  <a-cylinder position="7 2.5 -17" radius="0.1" height="5.0" color="#4e342e"></a-cylinder>
+  <a-cone position="7 6.2 -17" radius-bottom="1.1" radius-top="0" height="3.0" color="#33691e"></a-cone>
+  <a-cone position="7 7.8 -17" radius-bottom="0.75" radius-top="0" height="2.0" color="#1b5e20"></a-cone>
+  <a-cone position="7 9.0 -17" radius-bottom="0.45" radius-top="0" height="1.4" color="#2e7d32"></a-cone>
+
+  <a-cylinder position="-7 2.5 -17" radius="0.1" height="5.0" color="#5d4037"></a-cylinder>
+  <a-cone position="-7 6.2 -17" radius-bottom="1.1" radius-top="0" height="3.0" color="#2e7d32"></a-cone>
+  <a-cone position="-7 7.8 -17" radius-bottom="0.75" radius-top="0" height="2.0" color="#388e3c"></a-cone>
+  <a-cone position="-7 9.0 -17" radius-bottom="0.45" radius-top="0" height="1.4" color="#1b5e20"></a-cone>
+
+  <!-- Mid-city surprise trees poking between buildings -->
+  <a-cylinder position="-2 1.8 -9" radius="0.1" height="3.5" color="#6d4c41"></a-cylinder>
+  <a-sphere position="-2 3.75 -9" radius="0.8" color="#43a047"></a-sphere>
+  <a-sphere position="-1.7 4.3 -9" radius="0.5" color="#2e7d32"></a-sphere>
+
+  <a-cylinder position="2 1.8 -9" radius="0.1" height="3.5" color="#5d4037"></a-cylinder>
+  <a-sphere position="2 3.75 -9" radius="0.8" color="#388e3c"></a-sphere>
+  <a-sphere position="2.3 4.3 -9" radius="0.5" color="#1b5e20"></a-sphere>
+
+  <a-cylinder position="-1 2.0 -13" radius="0.11" height="4.0" color="#4e342e"></a-cylinder>
+  <a-sphere position="-1 4.2 -13" radius="0.9" color="#33691e"></a-sphere>
+  <a-sphere position="-0.6 4.8 -13" radius="0.55" color="#2e7d32"></a-sphere>
+
+  <a-cylinder position="1 2.0 -13" radius="0.11" height="4.0" color="#6d4c41"></a-cylinder>
+  <a-sphere position="1 4.2 -13" radius="0.9" color="#1b5e20"></a-sphere>
+  <a-sphere position="1.4 4.8 -13" radius="0.55" color="#388e3c"></a-sphere>
+
+  <!-- ===== CAMERA ===== -->
+  <a-camera position="0 1.6 2" look-controls wasd-controls></a-camera>
+
+</a-scene>
+</body>
+</html>
